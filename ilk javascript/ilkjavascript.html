@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <style>
+        #ilk {
+            background-color: red;
+            color: white;
+            font-size: 30px;
+            padding-left: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <p id="ilk">Ilk javascipt</p>
+    <img id="sekil" width="700px" height="300px;">
+
+    <div style="padding:50px;">
+        <input id="txtyazi" type="text" width="200px"><br><br><br>
+        <button style="width: 150px;height: 70px;" onclick="salamyaz()">Salam yaz</button>
+        <button style="width: 150px;height: 70px;" onclick="renginideyis()">Rəngini dəyiş</button>
+        <button style="width: 150px;height: 70px;" onclick="gizlet()">Gizlet</button>
+        <button style="width: 150px;height: 70px;" onclick="toyotasekili()">toyota</button>
+        <button style="width: 150px;height: 70px;" onclick="bmwsekili()">BMW</button>
+        <button style="width: 150px;height: 70px;" onclick="mercedessekili()">Mersedes</button>
+        <button style="width: 150px;height: 70px;" onclick="yazinideyiw()">Yazını dəyiş</button>
+        <button style="width: 150px;height: 70px;" onclick="tarix()">Tarixi yaz</button>
+
+    </div>
+
+
+    <script>
+        
+        function tarix()
+        {
+            var buguntarixi = new Date(Date());
+            var bugun=buguntarixi.getDate();
+            var buay=buguntarixi.getMonth()+1;
+            var buil=buguntarixi.getFullYear();
+            buay=buay+1;
+            var tarixformati=bugun+"/"+buay+"/"+buil;
+            alert(tarixformati);
+            document.getElementById("ilk").innerHTML=tarixformati;
+        }
+        function yazinideyiw()
+        {
+            var a = document.getElementById("txtyazi").value;
+            document.getElementById("ilk").innerHTML=a;
+            document.getElementById("ilk").style.display="block";
+        }
+        function salamyaz() {
+            document.getElementById('ilk').innerHTML = 'funksiya ile salam yaz';
+            document.getElementById("ilk").style.display="block";
+        }
+        function renginideyis()
+        {
+            document.getElementById("ilk").style.color="black";
+            document.getElementById("ilk").style.backgroundColor="yellow";
+            document.getElementById("ilk").style.display="block";
+        }
+        function gizlet()
+        {
+            document.getElementById("ilk").style.display="none";
+            document.getElementById("sekil").style.display="none";
+        }
+        function toyotasekili()
+        {
+            document.getElementById("sekil").src="toyota.jpg";
+            document.getElementById("sekil").style.display="block";
+        }
+        function mercedessekili()
+        {
+            document.getElementById("sekil").src="mersedes.jpg";
+            document.getElementById("sekil").style.display="block";
+        }
+        function bmwsekili()
+        {
+            document.getElementById("sekil").src="bmw.jpg";
+            document.getElementById("sekil").style.display="block";
+        }
+    </script>
+</body>
+
+</html>
